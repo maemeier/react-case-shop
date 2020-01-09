@@ -12,7 +12,7 @@ import Default from "./pages/Default.js";
 
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navbar";
-import Sidebar from "./components/sideBar";
+import Sidebar from "./components/Sidebar";
 import Sidecart from "./components/sideCart";
 import Footer from "./components/footer";
 class App extends Component {
