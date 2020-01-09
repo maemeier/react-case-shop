@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { ProductComsumer } from "../context";
+import { ProductConsumer } from "../context";
 
 const Homepage = () => {
   return (
     <div>
-      <ProductComsumer>
+      <ProductConsumer>
         {value => {
           console.log(value);
           return <h1>Hello from Homepage</h1>;
         }}
-      </ProductComsumer>
+      </ProductConsumer>
     </div>
   );
 };

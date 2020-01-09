@@ -1,11 +1,11 @@
 import React from "react";
 import { FaBars, FaCart, FaCartPlus } from "react-icons/fa";
 import styled from "styled-components";
-import { ProductComsumer } from "../context";
+import { ProductConsumer } from "../context";
 import logo from "../images/logo.svg";
 const Navbar = () => {
   return (
-    <ProductComsumer>
+    <ProductConsumer>
       {value => {
         const { cartItems, handleSideBar, handleCart } = value;
         return (
@@ -21,7 +21,7 @@ const Navbar = () => {
           </NavWrapper>
         );
       }}
-    </ProductComsumer>
+    </ProductConsumer>
   );
 };
 
