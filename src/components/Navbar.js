@@ -1,21 +1,21 @@
 import React from "react";
-import { FaBars, FaCart, FaCartPlus } from "react-icons/fa";
+import { FaBars, FaCartPlus } from "react-icons/fa";
 import styled from "styled-components";
 import { ProductConsumer } from "../context";
 import logo from "../images/logo.svg";
-const Navbar = () => {
+export default function Navbar() {
   return (
     <ProductConsumer>
       {value => {
-        const { cartItems, handleSideBar, handleCart } = value;
+        const { cartItems, handleSidebar, handleCart } = value;
         return (
           <NavWrapper>
             <div className="nav-center">
-              <FaBars className="nav-icon" onClick={handleSideBar} />
-              <img src={logo} alt="company-log" />
+              <FaBars className="nav-icon" onClick={handleSidebar} />
+              <img src={logo} alt="tech store logo" />
               <div className="nav-cart">
                 <FaCartPlus className="nav-icon" onClick={handleCart} />
-                <div className="cart-items"> {cartItems}</div>
+                <div className="cart-items">{cartItems}</div>
               </div>
             </div>
           </NavWrapper>
@@ -23,17 +23,17 @@ const Navbar = () => {
       }}
     </ProductConsumer>
   );
-};
+}
 
 const NavWrapper = styled.nav`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 100%
-  padding:1rem 1.5rem;
-  background:var(--mainGrey);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--mainGrey);
   border-bottom: 3px solid var(--primaryColor);
-  .nav-center{
+  .nav-center {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,21 +42,19 @@ const NavWrapper = styled.nav`
   }
   .nav-icon {
     font-size: 1.5rem;
-    cursor: pointer
+    cursor: pointer;
   }
-  .nav-cart{
-    position:relative;
+  .nav-cart {
+    position: relative;
   }
-  .cart-items{
-    background:var(--primaryColor);
+  .cart-items {
+    background: var(--primaryColor);
     color: var(--mainWhite);
     font-size: 0.85rem;
     position: absolute;
     top: -8px;
-    right: -6px;
+    right: -8px;
     padding: 0 5px;
-    border-radius: 90px;
-
+    border-radius: 50%;
   }
 `;
-export default Navbar;

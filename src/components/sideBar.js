@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
-
-const SideBar = () => {
+export default function Sidebar() {
   return (
     <ProductConsumer>
       {value => {
@@ -30,7 +29,7 @@ const SideBar = () => {
       }}
     </ProductConsumer>
   );
-};
+}
 
 const SideWrapper = styled.nav`
   position: fixed;
@@ -41,7 +40,7 @@ const SideWrapper = styled.nav`
   background: var(--mainGrey);
   z-index: 1;
   border-right: 4px solid var(--primaryColor);
-  transitiion: var(--mainTransition);
+  transition: var(--mainTransition);
   transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};
   ul {
     list-style-type: none;
@@ -66,4 +65,3 @@ const SideWrapper = styled.nav`
     width: 20rem;
   }
 `;
-export default SideBar;

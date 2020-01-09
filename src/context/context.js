@@ -1,50 +1,37 @@
 import React, { Component } from "react";
 import { linkData } from "./linkData";
-
 const ProductContext = React.createContext();
-
-// Provider
-// Consumer
+//Provider
+//Consumer
 class ProductProvider extends Component {
   state = {
-    sideBarOpen: false,
+    sidebarOpen: false,
     cartOpen: false,
-    cartItems: 10,
+    cartItems: 110,
     links: linkData
   };
-
-  handleSideBar = () => {
-    this.setState({
-      sideBarOpen: !this.state.sideBarOpen
-    });
+  // handle sidebar
+  handleSidebar = () => {
+    this.setState({ sidebarOpen: !this.state.sidebarOpen });
   };
-
+  // hanldle sart
   handleCart = () => {
-    this.setState({
-      cartOpen: !this.state.sideBarOpen
-    });
+    this.setState({ cartOpen: !this.state.sidebarOpen });
   };
-
-  // close cart
+  //close cart
   closeCart = () => {
-    this.setState({
-      cartOpen: false
-    });
+    this.setState({ cartOpen: false });
   };
-
-  //open cart
+  // open
   openCart = () => {
-    this.setState({
-      cartOpen: true
-    });
+    this.setState({ cartOpen: true });
   };
-
   render() {
     return (
       <ProductContext.Provider
         value={{
           ...this.state,
-          handleSideBar: this.handleSideBar,
+          handleSidebar: this.handleSidebar,
           handleCart: this.handleCart,
           closeCart: this.closeCart,
           openCart: this.openCart
@@ -57,4 +44,5 @@ class ProductProvider extends Component {
 }
 
 const ProductConsumer = ProductContext.Consumer;
+
 export { ProductProvider, ProductConsumer };
